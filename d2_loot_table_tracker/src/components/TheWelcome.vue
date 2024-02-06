@@ -79,7 +79,7 @@
         console.log(json); //Gjallarhorn
         console.log(json.Response.data.inventoryItem.itemName); //Gjallarhorn
       }
-      }
+      } 
 
       xhr.send();
     },
