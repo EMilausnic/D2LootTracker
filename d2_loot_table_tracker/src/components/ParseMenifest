@@ -1,0 +1,30 @@
+import pickle
+import json
+
+# Open the manifest.pickle file for reading
+with open('Manifest.pickle', 'rb') as f:
+    # Deserialize the contents of the pickle file
+    manifest_data = pickle.load(f)
+
+# Initialize an empty list to store items with 'itemName'
+items_with_name = []
+
+# Iterate over the dictionary and filter out items with 'itemName'
+destinationDict = manifest_data['DestinyProgressionDefinition']    
+for key, val in destinationDict.items():
+    print()
+    print(key)
+    print(val)
+    items_with_name.append(key)
+    items_with_name.append(val)
+#     if 'itemName' in value:
+#         print(value)
+
+# Define the output file path
+output_file_path = 'DestinyProgressionDefinition.json'
+
+# Write the filtered data to a JSON file
+with open(output_file_path, 'w') as f:
+    json.dump(items_with_name, f, indent=4)
+
+print(f"Filtered data containing 'itemName' has been written to '{output_file_path}'")
