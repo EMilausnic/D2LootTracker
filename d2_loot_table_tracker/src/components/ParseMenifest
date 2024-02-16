@@ -1,6 +1,13 @@
 import pickle
 import json
 
+#####################################################################
+#####################################################################
+
+# now that I am using the d2 manifest, this does not apply anymore
+
+#####################################################################
+#####################################################################
 # Open the manifest.pickle file for reading
 with open('Manifest.pickle', 'rb') as f:
     # Deserialize the contents of the pickle file
@@ -10,7 +17,7 @@ with open('Manifest.pickle', 'rb') as f:
 items_with_name = []
 
 # Iterate over the dictionary and filter out items with 'itemName'
-destinationDict = manifest_data['DestinyProgressionDefinition']    
+destinationDict = manifest_data['DestinyInventoryItemDefinition']    
 for key, val in destinationDict.items():
     print()
     print(key)
@@ -21,7 +28,7 @@ for key, val in destinationDict.items():
 #         print(value)
 
 # Define the output file path
-output_file_path = 'DestinyProgressionDefinition.json'
+output_file_path = 'DestinyInventoryItemDefinition.json'
 
 # Write the filtered data to a JSON file
 with open(output_file_path, 'w') as f:

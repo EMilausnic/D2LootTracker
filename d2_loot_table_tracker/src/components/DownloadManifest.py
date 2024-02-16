@@ -1,149 +1,35 @@
-#All of these imports used, if the code is broken down into several sections like it is on the wiki,
-#might not make sense to include all of them at the beginning, but will save time for new devs
-
-import requests, zipfile, os, pickle, json, sqlite3
-
-def get_manifest():
-    manifest_url = 'http://www.bungie.net/Platform/Destiny/Manifest/'
-
-    #get the manifest location from the json
-    r = requests.get(manifest_url)
-    manifest = r.json()
-    mani_url = 'http://www.bungie.net'+manifest['Response']['mobileWorldContentPaths']['en']
-
-    #Download the file, write it to 'MANZIP'
-    r = requests.get(mani_url)
-    with open("MANZIP", "wb") as zip:
-        zip.write(r.content)
-    print("Download Complete!")
-
-    #Extract the file contents, and rename the extracted file
-    # to 'Manifest.content'
-    with zipfile.ZipFile('MANZIP') as zip:
-        name = zip.namelist()
-        zip.extractall()
-    os.rename(name[0], 'Manifest.content')
-    print('Unzipped!')
-
-hashes = {
-    'DestinyActivityDefinition': 'activityHash',
-    'DestinyActivityTypeDefinition': 'activityTypeHash',
-    'DestinyClassDefinition': 'classHash',
-    'DestinyGenderDefinition': 'genderHash',
-    'DestinyInventoryBucketDefinition': 'bucketHash',
-    'DestinyInventoryItemDefinition': 'itemHash',
-    'DestinyProgressionDefinition': 'progressionHash',
-    'DestinyRaceDefinition': 'raceHash',
-    'DestinyTalentGridDefinition': 'gridHash',
-    'DestinyUnlockFlagDefinition': 'flagHash',
-    'DestinyHistoricalStatsDefinition': 'statId',
-    'DestinyDirectorBookDefinition': 'bookHash',
-    'DestinyStatDefinition': 'statHash',
-    'DestinySandboxPerkDefinition': 'perkHash',
-    'DestinyDestinationDefinition': 'destinationHash',
-    'DestinyPlaceDefinition': 'placeHash',
-    'DestinyActivityBundleDefinition': 'bundleHash',
-    'DestinyStatGroupDefinition': 'statGroupHash',
-    'DestinySpecialEventDefinition': 'eventHash',
-    'DestinyFactionDefinition': 'factionHash',
-    'DestinyVendorCategoryDefinition': 'categoryHash',
-    'DestinyEnemyRaceDefinition': 'raceHash',
-    'DestinyScriptedSkullDefinition': 'skullHash',
-    'DestinyGrimoireCardDefinition': 'cardId'
-}
-
-hashes_trunc = {
-    'DestinyInventoryItemDefinition': 'itemHash',
-    # 'DestinyStatDefinition': 'statHash',
-    # 'DestinySandboxPerkDefinition': 'perkHash',
-}
-
-def build_dict(hash_dict):
-    #connect to the manifest
-    con = sqlite3.connect('manifest.content')
-    print('Connected')
-    #create a cursor object
-    cur = con.cursor()
-
-    all_data = {}
-    #for every table name in the dictionary
-    for table_name in hash_dict.keys():
-        #get a list of all the jsons from the table
-        cur.execute('SELECT json from '+table_name)
-        print('Generating '+table_name+' dictionary....')
-
-        #this returns a list of tuples: the first item in each tuple is our json
-        items = cur.fetchall()
-
-        #create a list of jsons
-        item_jsons = [json.loads(item[0]) for item in items]
-
-        #create a dictionary with the hashes as keys
-        #and the jsons as values
-        item_dict = {}
-        hash = hash_dict[table_name]
-        for item in item_jsons:
-            item_dict[item[hash]] = item
-
-        #add that dictionary to our all_data using the name of the table
-        #as a key.
-        all_data[table_name] = item_dict
-        print(item_dict)
-
-    print('Dictionary Generated!')
-    return all_data
-
-
-#check if pickle exists, if not create one.
-if os.path.isfile("Manifest.content") == False:
-    get_manifest()
-    all_data = build_dict(hashes)
-    with open('manifest.pickle', 'wb') as data:
-        pickle.dump(all_data, data)
-        print("'manifest.pickle' created!\nDONE!")
-else:
-    print('Pickle Exists')
-
-with open('manifest.pickle', 'rb') as data:
-    all_data = pickle.load(data)
-hash = 1274330687
-ghorn = all_data['DestinyInventoryItemDefinition'][hash]
-
-print('Name: '+ghorn['itemName'])
-print('Type: '+ghorn['itemTypeName'])
-print('Tier: '+ghorn['tierTypeName'])
-print(ghorn['itemDescription'])
-
-# print()
-# print()
-# print()
-# for line in all_data['DestinyInventoryItemDefinition']:
-#         print()
-#         item = all_data['DestinyInventoryItemDefinition'][line]
-#         # Attempt to print item name if possible
-#         try:
-#             print('Name: '+item['itemName'])
-#         except KeyError:
-#             continue
-#             # print("this item does not have a name")
-        
-#         # get type IF POSSIBLE
-#         try:
-#             print('Type: '+item['itemTypeName'])
-#             print(line) # this is the hash
-#         except KeyError:
-#             continue
-
-
+import requests
 import json
-# OKAY so all_data is a dict here :/
-with open("Manifest.json", "w") as fp:
-    for item in all_data['DestinyInventoryItemDefinition']:
-        print(item)
-        json.dump(item, fp)
-    # json.dump(all_data, fp)
 
-# with open("data.json", "r") as fp:
-#     data = json.load(fp)
-# print(data)
-# print(type(data))
+def download_manifest(api_key):
+    manifest_url = 'http://www.bungie.net/Platform/Destiny2/Manifest/'
+    headers = {
+        'X-API-Key': api_key
+    }
+
+    try:
+        response = requests.get(manifest_url, headers=headers)
+        response.raise_for_status()  # Raise an exception for 4xx and 5xx status codes
+        manifest_data = response.json()
+        print(manifest_data['Response']['jsonWorldComponentContentPaths']['en'])
+
+        for tablename, url, in manifest_data['Response']['jsonWorldComponentContentPaths']['en'].items():
+            # Extract the manifest URL from the response
+            manifest_json_url = 'http://www.bungie.net' + url
+
+            # Download the manifest JSON
+            response = requests.get(manifest_json_url, headers=headers)
+            response.raise_for_status()
+
+            # Save the manifest JSON to a file
+            with open(f'{tablename}.json', 'w') as f:
+                json.dump(response.json(), f, indent=4)
+            
+            print(f"{tablename}.json downloaded successfully and saved as "+ f"{tablename}.json")
+
+    except requests.exceptions.RequestException as e:
+        print("Error downloading manifest:", e)
+
+# Replace 'YOUR_API_KEY' with your actual Bungie API key
+api_key = '14e8991258cb40dbb21198e66f69edbe'
+download_manifest(api_key)

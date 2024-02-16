@@ -25,6 +25,11 @@
       @click="getTokenResponce">
         gety users token
       </button>
+      
+      <button
+      @click="getD2Manifest">
+        get manifest
+      </button>
   </div>
 </template>
 
@@ -210,6 +215,23 @@
         // Perform authentication logic with the received code
         console.log('Code from URL:', code);
       }
+    },
+    getD2Manifest() {
+      // let client_id = "45889";
+      // get token response
+      let xhr2 = new XMLHttpRequest();
+      xhr2.open("GET", "https://www.bungie.net/Platform/Destiny2/Manifest/", true);
+      let apiKey = "14e8991258cb40dbb21198e66f69edbe";
+      xhr2.setRequestHeader("X-API-Key", apiKey);
+
+      // xhr2.onreadystatechange = function(){
+      //   if(this.readyState === 4 && this.status === 200){
+      //     let json = JSON.parse(this.responseText);
+      //     console.log(json); 
+      //   }
+      // }
+
+      xhr2.send();
     }
   },
 };

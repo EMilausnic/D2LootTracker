@@ -19,6 +19,7 @@ coverage
 
 # Editor directories and files
 .vscode/*
+Pokemon ultimate fusion/*
 !.vscode/extensions.json
 .idea
 *.suo
