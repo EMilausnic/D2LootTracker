@@ -19,7 +19,9 @@ coverage
 
 # Editor directories and files
 .vscode/*
-Pokemon ultimate fusion/*
+D2_Manifest/DestinyInventoryItemDefinition.json
+D2_Manifest/*
+D1_Manifest/*
 !.vscode/extensions.json
 .idea
 *.suo
@@ -27,5 +29,6 @@ Pokemon ultimate fusion/*
 *.njsproj
 *.sln
 *.sw?
-
 *.tsbuildinfo
+Pokemon ultimate fusion
+git 
