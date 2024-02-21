@@ -32,14 +32,19 @@
       </button>
 
 
-      <table style="">
+      <table>
         <tr>
           <td>Item Name</td>
           <td>Source Location</td>
+          <td>Hash for this item</td>
         </tr>
         <tr v-for="gear in gearList">
           <td>{{gear.name}}</td>
           <td>{{gear.sourceString}}</td>
+          <td>{{gear.hash}}</td>
+          <td>
+            <img :src="gear.iconLink"/>
+          </td>
         </tr>
       </table>
   </div>
@@ -66,11 +71,14 @@
         this.gearList.push({
           name: "======================",
           sourceString: "=============================",
+          hash: "======================",
         })  
 
         this.gearList.push({
           name: item.displayProperties.name,
+          iconLink: "https://www.bungie.net"+item.displayProperties.icon,
           sourceString: item.sourceString,
+          hash: item.hash,
         })  
       });
       console.log(this.gearList)
