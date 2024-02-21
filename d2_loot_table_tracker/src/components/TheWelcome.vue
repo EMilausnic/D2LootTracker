@@ -34,6 +34,10 @@
       @click="getUniqueSourceStrings">
         get getUniqueSourceStrings
       </button>
+      <button
+      @click="filterGearList">
+        Filter gear list by sources
+      </button>
 
 
       <table>
@@ -42,13 +46,13 @@
           <td>Source Location</td>
           <td>Hash for this item</td>
         </tr>
-        <tr v-for="gear in gearList">
+        <tr v-for="gear in gearList" :key="gear.hash">
           <td>{{gear.name}}</td>
           <td>{{gear.sourceString}}</td>
           <td>{{gear.hash}}</td>
-          <td>
+          <!-- <td>
             <img :src="gear.iconLink"/>
-          </td>
+          </td> -->
         </tr>
       </table>
   </div>
@@ -56,8 +60,8 @@
 
 
 <script>
-  // import data from "./simplified_file_shortned.json";
-  import data from "./DestinyCollectibleDefinition.json";
+  import data from "./simplified_file_shortned.json";
+  // import data from "./DestinyCollectibleDefinition.json";
 
   export default {
   created() {
@@ -70,23 +74,59 @@
       uniqueSources: new Set()
     }
   },
+  computed: { 
+    filterGearList() {
+      // Create a copy of the original array to avoid mutating it directly
+      let tempGearList = this.gearList.slice();
+      
+      // Sort the array by sourceString
+      tempGearList.sort((a, b) => {
+        let fa = a.sourceString.toLowerCase(),
+            fb = b.sourceString.toLowerCase();
+
+        if (fa < fb) {
+          return -1;
+        }
+        if (fa > fb) {
+          return 1;
+        }
+        return 0;
+      });
+
+      // Update the original gearList with the sorted array
+      this.gearList = tempGearList;
+    },
+    sortGearList: function() {
+      // this should work but i dont think its doing anything right now
+      function compare(a, b) {
+        if (a.sourceString < b.sourceString) return -1;
+        if (a.sourceString > b.sourceString) return 1;
+        return 0;
+      }
+      return this.arrays.sort(compare);
+    }
+
+  },
   methods: {
     fillGearList() {
       Object.values(data).forEach(item => {
         // Adding this in to space things out a little better
-        this.gearList.push({
-          name: "======================",
-          sourceString: "=============================",
-          hash: "======================"
-        })  
-        
-        this.gearList.push({
-          name: item.displayProperties.name,
-          iconLink: "https://www.bungie.net"+item.displayProperties.icon,
-          sourceString: item.sourceString,
-          hash: item.hash,
-        })  
+        // this.gearList.push({
+        //   name: "======================",
+        //   sourceString: "=============================",
+        //   hash: "======================"
+        // })  
+        if (item.sourceString != "") { // im not showing items that have a blank source string
+          this.gearList.push({
+            name: item.displayProperties.name,
+            iconLink: "https://www.bungie.net"+item.displayProperties.icon,
+            sourceString: item.sourceString,
+            hash: item.hash,
+          })
+        }
       });
+      console.log(this.gearList)
+      filtergearList()
       console.log(this.gearList)
     },
     getUniqueSourceStrings() {
@@ -96,6 +136,9 @@
         this.uniqueSources.add(item.sourceString)
       });
       console.log(this.uniqueSources)
+    },
+    sortGearList(array) {
+      return _.orderBy(array, 'sourceString', 'asc');
     },
     queryThePlatform() {
       let apiKey = "14e8991258cb40dbb21198e66f69edbe";
