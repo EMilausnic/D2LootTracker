@@ -1,14 +1,14 @@
 
 <template>
   <div>
-      <button
+      <!-- <button
       @click="getGun">
         get gun
       </button>
 
-      <button
-      @click="queryThePlatform">
-        query platform
+      <button 
+        @click="queryThePlatform">
+        query platform,
       </button>
 
       <button
@@ -24,41 +24,76 @@
       <button
       @click="getTokenResponce">
         gety users token
-      </button>
+      </button> -->
       
       <button
-      @click="getD2Manifest">
-        get manifest
+      @click="fillGearList">
+        get gear list filled
       </button>
+
+
+      <table style="">
+        <tr>
+          <td>Item Name</td>
+          <td>Source Location</td>
+        </tr>
+        <tr v-for="gear in gearList">
+          <td>{{gear.name}}</td>
+          <td>{{gear.sourceString}}</td>
+        </tr>
+      </table>
   </div>
 </template>
 
 
 <script>
+  import data from "./simplified_file_shortned.json";
+
   export default {
   created() {
     this.handleCallback();
   },
-    methods: {
-      queryThePlatform() {
-        let apiKey = "14e8991258cb40dbb21198e66f69edbe";
-        let client_id = "45889";
-        let state = "6i0mkLx79Hp91nzWVeHrzHG4";
-        let authURL = "https://www.bungie.net/en/OAuth/Authorize?client_id=45889&response_type=code&state="+state;
-        let xhr = new XMLHttpRequest();
-        xhr.open("GET", authURL, true);
-        xhr.setRequestHeader("X-API-Key", apiKey);
-        xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://www.bungie.net');
-        xhr.setRequestHeader("client_id", client_id);
-        xhr.setRequestHeader("status", "6i0mkLx79Hp91nzWVeHrzHG4");
+  data() {
+    return {
+      gearDict: data,
+      gearList: [],
+    }
+  },
+  methods: {
+    fillGearList() {
+      Object.values(data).forEach(item => {
+        // Adding this in to space things out a little better
+        this.gearList.push({
+          name: "======================",
+          sourceString: "=============================",
+        })  
+
+        this.gearList.push({
+          name: item.displayProperties.name,
+          sourceString: item.sourceString,
+        })  
+      });
+      console.log(this.gearList)
+    },
+    queryThePlatform() {
+      let apiKey = "14e8991258cb40dbb21198e66f69edbe";
+      let client_id = "45889";
+      let state = "6i0mkLx79Hp91nzWVeHrzHG4";
+      let authURL = "https://www.bungie.net/en/OAuth/Authorize?client_id=45889&response_type=code&state="+state;
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", authURL, true);
+      xhr.setRequestHeader("X-API-Key", apiKey);
+      xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://www.bungie.net');
+      xhr.setRequestHeader("client_id", client_id);
+      xhr.setRequestHeader("status", "6i0mkLx79Hp91nzWVeHrzHG4");
 
 
-        xhr.onreadystatechange = function(){
-        if(this.readyState === 4 && this.status === 200){
-          let json = JSON.parse(this.responseText);
-          console.log(json.Response);
-          // console.log(json.Response.data.inventoryItem.itemName); //Gjallarhorn
-        }
+      xhr.onreadystatechange = function(){
+      if(this.readyState === 4 && this.status === 200){
+        let json = JSON.parse(this.responseText);
+        console.log(json.Response);
+        // console.log(json.Response.data.inventoryItem.itemName); //Gjallarhorn
+      }
         else{
           console.log("failed??")
         }
@@ -216,23 +251,6 @@
         console.log('Code from URL:', code);
       }
     },
-    getD2Manifest() {
-      // let client_id = "45889";
-      // get token response
-      let xhr2 = new XMLHttpRequest();
-      xhr2.open("GET", "https://www.bungie.net/Platform/Destiny2/Manifest/", true);
-      let apiKey = "14e8991258cb40dbb21198e66f69edbe";
-      xhr2.setRequestHeader("X-API-Key", apiKey);
-
-      // xhr2.onreadystatechange = function(){
-      //   if(this.readyState === 4 && this.status === 200){
-      //     let json = JSON.parse(this.responseText);
-      //     console.log(json); 
-      //   }
-      // }
-
-      xhr2.send();
-    }
   },
 };
 </script>
