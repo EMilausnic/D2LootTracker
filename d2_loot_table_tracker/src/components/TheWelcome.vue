@@ -30,6 +30,10 @@
       @click="fillGearList">
         get gear list filled
       </button>
+      <button
+      @click="getUniqueSourceStrings">
+        get getUniqueSourceStrings
+      </button>
 
 
       <table>
@@ -52,7 +56,8 @@
 
 
 <script>
-  import data from "./simplified_file_shortned.json";
+  // import data from "./simplified_file_shortned.json";
+  import data from "./DestinyCollectibleDefinition.json";
 
   export default {
   created() {
@@ -62,6 +67,7 @@
     return {
       gearDict: data,
       gearList: [],
+      uniqueSources: new Set()
     }
   },
   methods: {
@@ -71,9 +77,9 @@
         this.gearList.push({
           name: "======================",
           sourceString: "=============================",
-          hash: "======================",
+          hash: "======================"
         })  
-
+        
         this.gearList.push({
           name: item.displayProperties.name,
           iconLink: "https://www.bungie.net"+item.displayProperties.icon,
@@ -82,6 +88,14 @@
         })  
       });
       console.log(this.gearList)
+    },
+    getUniqueSourceStrings() {
+        // getting all of the unique source strings for the gear
+        // will use them to sort gear into diff source locations 
+      Object.values(data).forEach(item => {
+        this.uniqueSources.add(item.sourceString)
+      });
+      console.log(this.uniqueSources)
     },
     queryThePlatform() {
       let apiKey = "14e8991258cb40dbb21198e66f69edbe";
