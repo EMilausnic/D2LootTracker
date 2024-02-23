@@ -31,6 +31,11 @@
         get gear list filled
       </button>
 
+      <button
+      @click="makeAPITestCall">
+        hello API?
+      </button>
+
 
       <table>
         <tr>
@@ -82,6 +87,25 @@
         })  
       });
       console.log(this.gearList)
+    },
+    makeAPITestCall() {
+      // this works! I am able to get all items from the test ap that I made!
+      let APITestURL = "https://8a3jd2cm86.execute-api.us-east-2.amazonaws.com/items";
+      let xhr = new XMLHttpRequest();
+      
+      xhr.open("GET", APITestURL, true);
+     
+      xhr.onreadystatechange = function(){
+        if(this.status === 200){
+          let json = JSON.parse(this.responseText);
+          console.log(json);
+        }
+        else{
+          console.log("failed??")
+        }
+      }
+
+      xhr.send(); 
     },
     queryThePlatform() {
       let apiKey = "14e8991258cb40dbb21198e66f69edbe";
