@@ -60,8 +60,8 @@
 
 
 <script>
-  import data from "./simplified_file_shortned.json";
-  // import data from "./DestinyCollectibleDefinition.json";
+  // import data from "./simplified_file_shortned.json";
+  import data from "./DestinyCollectibleDefinition.json";
 
   export default {
   created() {
