@@ -31,6 +31,16 @@
         get gear list filled
       </button>
 
+      <button
+      @click="makeAPITestCall">
+        hello API?
+      </button>
+
+      <button
+      @click="putItemInDatabase">
+        add item into database
+      </button>
+
 
       <table>
         <tr>
@@ -82,6 +92,55 @@
         })  
       });
       console.log(this.gearList)
+    },
+    makeAPITestCall() {
+      // this works! I am able to get all items from the test ap that I made!
+      let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/items";
+      let xhr = new XMLHttpRequest();
+      
+      xhr.open("GET", APITestURL, true);
+     
+      xhr.onreadystatechange = function(){
+        if(this.status === 200){
+          console.log("this.responseText: "+this.responseText);
+        }
+        else{
+          console.log("failed??")
+        }
+      }
+
+      xhr.send(); 
+    },
+    putItemInDatabase() {
+      let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/items";
+
+      // Define the JSON object you want to send to the API
+      const item = {
+        ItemHash: 'test_item_from_website',
+        Name: 'name_from_website',
+        SourceString: 'source_string_from_website'
+      }
+
+      // Convert the JSON object to a string
+      const itemJSON = JSON.stringify(item);
+      console.log("stringified json object: " + itemJSON)
+      let xhr = new XMLHttpRequest();
+      
+      xhr.open("PUT", APITestURL, true);
+      // Set the Content-Type header to application/json
+      xhr.setRequestHeader("Content-Type", "application/json");
+      // xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+     
+      xhr.onreadystatechange = function(){
+        if(this.status === 200){
+          console.log("this.responseText: "+this.responseText);
+        }
+        else{
+          console.log("failed??")
+        }
+      }
+
+      xhr.send(itemJSON); 
     },
     queryThePlatform() {
       let apiKey = "14e8991258cb40dbb21198e66f69edbe";
