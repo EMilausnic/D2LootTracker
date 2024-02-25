@@ -36,6 +36,11 @@
         hello API?
       </button>
 
+      <button
+      @click="putItemInDatabase">
+        add item into database
+      </button>
+
 
       <table>
         <tr>
@@ -90,15 +95,14 @@
     },
     makeAPITestCall() {
       // this works! I am able to get all items from the test ap that I made!
-      let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com//items";
+      let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/items";
       let xhr = new XMLHttpRequest();
       
       xhr.open("GET", APITestURL, true);
      
       xhr.onreadystatechange = function(){
         if(this.status === 200){
-          let json = JSON.parse(this.responseText);
-          console.log(json);
+          console.log("this.responseText: "+this.responseText);
         }
         else{
           console.log("failed??")
@@ -107,32 +111,38 @@
 
       xhr.send(); 
     },
-    queryThePlatform() {
-      let apiKey = "14e8991258cb40dbb21198e66f69edbe";
-      let client_id = "45889";
-      let state = "6i0mkLx79Hp91nzWVeHrzHG4";
-      let authURL = "https://www.bungie.net/en/OAuth/Authorize?client_id=45889&response_type=code&state="+state;
-      let xhr = new XMLHttpRequest();
-      xhr.open("GET", authURL, true);
-      xhr.setRequestHeader("X-API-Key", apiKey);
-      xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://www.bungie.net');
-      xhr.setRequestHeader("client_id", client_id);
-      xhr.setRequestHeader("status", "6i0mkLx79Hp91nzWVeHrzHG4");
+    putItemInDatabase() {
+      let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/items";
 
-
-      xhr.onreadystatechange = function(){
-      if(this.readyState === 4 && this.status === 200){
-        let json = JSON.parse(this.responseText);
-        console.log(json.Response);
-        // console.log(json.Response.data.inventoryItem.itemName); //Gjallarhorn
+      // Define the JSON object you want to send to the API
+      const item = {
+        ItemHash: 'test_item_from_website',
+        Name: 'name_from_website',
+        SourceString: 'source_string_from_website'
       }
+
+      // Convert the JSON object to a string
+      const itemJSON = JSON.stringify(item);
+      console.log("stringified json object: " + itemJSON)
+      let xhr = new XMLHttpRequest();
+      
+      xhr.open("PUT", APITestURL, true);
+      // Set the Content-Type header to application/json
+      xhr.setRequestHeader("Content-Type", "application/json");
+      // xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+     
+      xhr.onreadystatechange = function(){
+        if(this.status === 200){
+          console.log("this.responseText: "+this.responseText);
+        }
         else{
           console.log("failed??")
         }
       }
-      xhr.send();
+
+      xhr.send(itemJSON); 
     },
-    putItemInDatabase() {
+    queryThePlatform() {
       let apiKey = "14e8991258cb40dbb21198e66f69edbe";
       let client_id = "45889";
       let state = "6i0mkLx79Hp91nzWVeHrzHG4";
