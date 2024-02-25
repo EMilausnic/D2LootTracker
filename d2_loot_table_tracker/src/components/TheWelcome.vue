@@ -41,6 +41,11 @@
         add item into database
       </button>
 
+      <button
+      @click="putMultiupleItemsInDatabase">
+        add ITEMS into database
+      </button>
+
 
       <table>
         <tr>
@@ -123,6 +128,50 @@
 
       // Convert the JSON object to a string
       const itemJSON = JSON.stringify(item);
+      console.log("stringified json object: " + itemJSON)
+      let xhr = new XMLHttpRequest();
+      
+      xhr.open("PUT", APITestURL, true);
+      // Set the Content-Type header to application/json
+      xhr.setRequestHeader("Content-Type", "application/json");
+      // xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+     
+      xhr.onreadystatechange = function(){
+        if(this.status === 200){
+          console.log("this.responseText: "+this.responseText);
+        }
+        else{
+          console.log("failed??")
+        }
+      }
+
+      xhr.send(itemJSON); 
+    },
+    putMultiupleItemsInDatabase() {
+      let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/manyitems";
+
+      // Define the JSON object you want to send to the API
+      const item3 = {
+        
+          ItemHash: 'test_item_from_website3',
+          Name: 'name_from_website3',
+          SourceString: 'source_string_from_website3'
+        
+      }
+      const item2 = {
+        
+          ItemHash: 'test_item_from_website2',
+          Name: 'name_from_website2',
+          SourceString: 'source_string_from_website2'
+        
+      }
+      const items = [item2, item3]
+      // Now create the request object including the items array
+      const requestObject = {
+          items: items
+      }
+      // Convert the JSON object to a string
+      const itemJSON = JSON.stringify(requestObject);
       console.log("stringified json object: " + itemJSON)
       let xhr = new XMLHttpRequest();
       
