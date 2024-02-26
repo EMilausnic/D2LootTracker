@@ -1,0 +1,727 @@
+{
+    "3730723682": {
+        "displayProperties": {
+            "description": "",
+            "name": "Swordflight 4.1",
+            "icon": "/common/destiny2_content/icons/fb7de9063a11a08e3ce0789abbfa13a6.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "2094233929",
+        "parentNodeHashes": [
+            1633867910
+        ],
+        "hash": 3730723682,
+        "index": 0,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "4030330765": {
+        "displayProperties": {
+            "description": "",
+            "name": "Swordflight 4.1",
+            "icon": "/common/destiny2_content/icons/79b52c0422a30c01515f385dd12c9fbc.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "3797729472",
+        "parentNodeHashes": [
+            1633867910
+        ],
+        "hash": 4030330765,
+        "index": 1,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "998664411": {
+        "displayProperties": {
+            "description": "",
+            "name": "Swordflight 4.1",
+            "icon": "/common/destiny2_content/icons/72a2ae3c5b21e5b16d3ed7f34e686f48.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "2680535688",
+        "parentNodeHashes": [
+            1633867910
+        ],
+        "hash": 998664411,
+        "index": 2,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "1309993091": {
+        "displayProperties": {
+            "description": "",
+            "name": "Swordflight 4.1",
+            "icon": "/common/destiny2_content/icons/c5357e87b00df3c1c45492ec9391f24f.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "2492669178",
+        "parentNodeHashes": [
+            1633867910
+        ],
+        "hash": 1309993091,
+        "index": 3,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "2538978516": {
+        "displayProperties": {
+            "description": "",
+            "name": "Binary Phoenix Cloak",
+            "icon": "/common/destiny2_content/icons/c11b2ba5714b96fa70bb0994d08afbef.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "87665893",
+        "parentNodeHashes": [
+            1633867910
+        ],
+        "hash": 2538978516,
+        "index": 4,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "3416362851": {
+        "displayProperties": {
+            "description": "",
+            "name": "Wing Contender",
+            "icon": "/common/destiny2_content/icons/94056f370958e72a9fa2d5f5640de1a3.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "3153956825",
+        "parentNodeHashes": [
+            1633867909,
+            543101070
+        ],
+        "hash": 3416362851,
+        "index": 15,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "3963580528": {
+        "displayProperties": {
+            "description": "",
+            "name": "Wing Contender",
+            "icon": "/common/destiny2_content/icons/e2db169956184be6b1b16ad6c6942c46.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "3091776080",
+        "parentNodeHashes": [
+            1633867909,
+            543101070
+        ],
+        "hash": 3963580528,
+        "index": 16,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "2549127432": {
+        "displayProperties": {
+            "description": "",
+            "name": "Wing Contender",
+            "icon": "/common/destiny2_content/icons/c581b3281e6ebadf2d3a5b9c4a017a5e.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "1914589560",
+        "parentNodeHashes": [
+            1633867909,
+            543101070
+        ],
+        "hash": 2549127432,
+        "index": 17,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "1583702638": {
+        "displayProperties": {
+            "description": "",
+            "name": "Wing Contender",
+            "icon": "/common/destiny2_content/icons/5d3eb569067c65cfaa5c2e38dbe5de16.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "3408834730",
+        "parentNodeHashes": [
+            1633867909,
+            543101070
+        ],
+        "hash": 1583702638,
+        "index": 18,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "1545594007": {
+        "displayProperties": {
+            "description": "",
+            "name": "Wing Contender",
+            "icon": "/common/destiny2_content/icons/798327b7b360012c52b72177d307db93.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "693067797",
+        "parentNodeHashes": [
+            1633867909,
+            543101070
+        ],
+        "hash": 1545594007,
+        "index": 19,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "939505006": {
+        "displayProperties": {
+            "description": "",
+            "name": "Cinder Pinion Cowl",
+            "icon": "/common/destiny2_content/icons/c1e00333c44584cb7cbe081508d458b9.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "1413409069",
+        "parentNodeHashes": [
+            1633867906
+        ],
+        "hash": 939505006,
+        "index": 20,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "4282723393": {
+        "displayProperties": {
+            "description": "",
+            "name": "Cinder Pinion Grasps",
+            "icon": "/common/destiny2_content/icons/2e8e9c0bcbf3bbdef8a4e63ab4a290ed.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "2066074780",
+        "parentNodeHashes": [
+            1633867906
+        ],
+        "hash": 4282723393,
+        "index": 21,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "551303439": {
+        "displayProperties": {
+            "description": "",
+            "name": "Cinder Pinion Vest",
+            "icon": "/common/destiny2_content/icons/4cef55a5cf65551bfad5894fadc93966.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "886273156",
+        "parentNodeHashes": [
+            1633867906
+        ],
+        "hash": 551303439,
+        "index": 22,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "113501927": {
+        "displayProperties": {
+            "description": "",
+            "name": "Cinder Pinion Strides",
+            "icon": "/common/destiny2_content/icons/aa313c0aa1e4f34590cba0d9c464042b.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "1069002790",
+        "parentNodeHashes": [
+            1633867906
+        ],
+        "hash": 113501927,
+        "index": 23,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "3316196144": {
+        "displayProperties": {
+            "description": "",
+            "name": "Cinder Pinion Cloak",
+            "icon": "/common/destiny2_content/icons/64472c6c79e5b0269a003c4afe34e841.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "1630000089",
+        "parentNodeHashes": [
+            1633867906
+        ],
+        "hash": 3316196144,
+        "index": 24,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "4160605345": {
+        "displayProperties": {
+            "description": "",
+            "name": "Clutch Extol Mask",
+            "icon": "/common/destiny2_content/icons/c8eb712d3478d4001265282204aca043.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "1767106452",
+        "parentNodeHashes": [
+            1633867907
+        ],
+        "hash": 4160605345,
+        "index": 25,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "688388758": {
+        "displayProperties": {
+            "description": "",
+            "name": "Clutch Extol Grips",
+            "icon": "/common/destiny2_content/icons/6d332651fed6d0479b3d80a2955920ec.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "597831725",
+        "parentNodeHashes": [
+            1633867907
+        ],
+        "hash": 688388758,
+        "index": 26,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "2197862978": {
+        "displayProperties": {
+            "description": "",
+            "name": "Clutch Extol Vest",
+            "icon": "/common/destiny2_content/icons/9f379fa8be051382931e68d38cfc5c6f.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "2969535443",
+        "parentNodeHashes": [
+            1633867907
+        ],
+        "hash": 2197862978,
+        "index": 27,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "1884438644": {
+        "displayProperties": {
+            "description": "",
+            "name": "Clutch Extol Strides",
+            "icon": "/common/destiny2_content/icons/b736173dc85e82bbce6fd2500d04d04e.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "1310207471",
+        "parentNodeHashes": [
+            1633867907
+        ],
+        "hash": 1884438644,
+        "index": 28,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "927167573": {
+        "displayProperties": {
+            "description": "",
+            "name": "Clutch Extol Cloak",
+            "icon": "/common/destiny2_content/icons/362767277a6ff92db72d39e60d0d4da5.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Crucible matches and earn rank-up packages from Lord Shaxx.",
+        "sourceHash": 897576623,
+        "itemHash": "921467658",
+        "parentNodeHashes": [
+            1633867907
+        ],
+        "hash": 927167573,
+        "index": 29,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "269841896": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Truage Casque",
+            "icon": "/common/destiny2_content/icons/4805dd95bdfc52df9a799e3ef5417999.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "1778619592",
+        "parentNodeHashes": [
+            3320568108
+        ],
+        "hash": 269841896,
+        "index": 30,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "3887313491": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Truage Grips",
+            "icon": "/common/destiny2_content/icons/cf0fe72951f9fa8fb029127a8f03f651.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "1125953881",
+        "parentNodeHashes": [
+            3320568108
+        ],
+        "hash": 3887313491,
+        "index": 31,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "2796071509": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Truage Vest",
+            "icon": "/common/destiny2_content/icons/bc5410e7683dbb726706232bcf1627b1.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "3713593535",
+        "parentNodeHashes": [
+            3320568108
+        ],
+        "hash": 2796071509,
+        "index": 32,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "1774732345": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Truage Boots",
+            "icon": "/common/destiny2_content/icons/a180cba6ef7f9a350b25a85e9a44acc1.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "4018139467",
+        "parentNodeHashes": [
+            3320568108
+        ],
+        "hash": 1774732345,
+        "index": 33,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "3789159050": {
+        "displayProperties": {
+            "description": "",
+            "name": "Mantle of Efrideet",
+            "icon": "/common/destiny2_content/icons/e7506e9906602135e0226c313f362842.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "665784782",
+        "parentNodeHashes": [
+            3320568108
+        ],
+        "hash": 3789159050,
+        "index": 34,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "2225252541": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Remembrance Casque",
+            "icon": "/common/destiny2_content/icons/c052acfabd226aaddda7c55bb27875ee.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "2936230179",
+        "parentNodeHashes": [
+            3320568111
+        ],
+        "hash": 2225252541,
+        "index": 45,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "2865192058": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Remembrance Grips",
+            "icon": "/common/destiny2_content/icons/ae6f6f391eea94c93098268731ae1648.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "4032295410",
+        "parentNodeHashes": [
+            3320568111
+        ],
+        "hash": 2865192058,
+        "index": 46,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "292730486": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Remembrance Vest",
+            "icon": "/common/destiny2_content/icons/4c5ecf5c101840377049bd14ac725cb1.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "2810038838",
+        "parentNodeHashes": [
+            3320568111
+        ],
+        "hash": 292730486,
+        "index": 47,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "1265028536": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Remembrance Strides",
+            "icon": "/common/destiny2_content/icons/64ff6392b9a9ee7bef71bff391568993.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "138566412",
+        "parentNodeHashes": [
+            3320568111
+        ],
+        "hash": 1265028536,
+        "index": 48,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "1563425889": {
+        "displayProperties": {
+            "description": "",
+            "name": "Cloak of Remembrance",
+            "icon": "/common/destiny2_content/icons/32ffc5a90c7119e52dce89129c98da10.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "2181242591",
+        "parentNodeHashes": [
+            3320568111
+        ],
+        "hash": 1563425889,
+        "index": 49,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "2903648516": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Fellowship Casque",
+            "icon": "/common/destiny2_content/icons/12677f62cef78db847399e72ed968b62.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "3624199242",
+        "parentNodeHashes": [
+            3320568104
+        ],
+        "hash": 2903648516,
+        "index": 50,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "3735608391": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Fellowship Grips",
+            "icon": "/common/destiny2_content/icons/a7ef86927366366453e330860c8e105e.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "3671337107",
+        "parentNodeHashes": [
+            3320568104
+        ],
+        "hash": 3735608391,
+        "index": 51,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "4215843353": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Fellowship Vest",
+            "icon": "/common/destiny2_content/icons/525aaa3feb6627ead560aa24fa921c4b.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "4039932861",
+        "parentNodeHashes": [
+            3320568104
+        ],
+        "hash": 4215843353,
+        "index": 52,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "2539636189": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Fellowship Strides",
+            "icon": "/common/destiny2_content/icons/20d15a5558a1f3e5d9c8b5fd40ddb21b.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "3406291173",
+        "parentNodeHashes": [
+            3320568104
+        ],
+        "hash": 2539636189,
+        "index": 53,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "2644192070": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Fellowship Cloak",
+            "icon": "/common/destiny2_content/icons/cbc8078fde2d5701253750e54fb9ec08.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "1248530160",
+        "parentNodeHashes": [
+            3320568104
+        ],
+        "hash": 2644192070,
+        "index": 54,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "935651559": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Symmachy Mask",
+            "icon": "/common/destiny2_content/icons/cd65c22cf7fc2aed2bb18a913813f057.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "3875549237",
+        "parentNodeHashes": [
+            3320568105
+        ],
+        "hash": 935651559,
+        "index": 55,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "1039398620": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Symmachy Grips",
+            "icon": "/common/destiny2_content/icons/325b8438fbba336978059fb0219e0394.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "2509918852",
+        "parentNodeHashes": [
+            3320568105
+        ],
+        "hash": 1039398620,
+        "index": 56,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "502526820": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Symmachy Vest",
+            "icon": "/common/destiny2_content/icons/aec0045ded81eb0bd4cfff5b6fe60f85.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "2772262012",
+        "parentNodeHashes": [
+            3320568105
+        ],
+        "hash": 502526820,
+        "index": 57,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "1803231114": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Symmachy Strides",
+            "icon": "/common/destiny2_content/icons/c3b4d1a7b150c440fa4af09a7f33fdaa.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "4057580974",
+        "parentNodeHashes": [
+            3320568105
+        ],
+        "hash": 1803231114,
+        "index": 58,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "2074074939": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Symmachy Cloak",
+            "icon": "/common/destiny2_content/icons/4c8484d0f4811a27c4f27344bca6f285.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "4058198769",
+        "parentNodeHashes": [
+            3320568105
+        ],
+        "hash": 2074074939,
+        "index": 59,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    }
+}
