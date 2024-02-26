@@ -39,7 +39,7 @@ for item_id, item_data in original_data.items():
     if item_data['sourceString'] == "Source: Eververse" or 'Ornament' in item_data.get('itemTypeDisplayName', '') or item_data.get('itemTypeDisplayName', '') not in allowed_gear_types:
         items_to_remove.append(item_id)
 
-
+    item_data["itemHash"] = str(item_data["itemHash"])
     # # remove items only earned in eververse
     # if item_data['sourceString'] == "Source: Eververse":
     #     del original_data[item_id]
