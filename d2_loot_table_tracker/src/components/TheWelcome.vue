@@ -41,6 +41,17 @@
         add single item into database
       </button>
 
+      <p>Enter testerItemName: {{ testerItemName }}</p>
+      <input v-model="testerItemName" placeholder="edit me" />
+
+      <p>Enter testerItemHash: {{ testerItemHash}}</p>
+      <input v-model="testerItemHash" placeholder="edit me" />
+
+      <p>Enter testerItemSource: {{ testerItemSource }}</p>
+      <input v-model="testerItemSource" placeholder="edit me" />
+
+
+
       <button
       @click="putMultiupleItemsInDatabase">
         add 2 test items into the database
@@ -74,6 +85,7 @@
 <script>
   import items from "./modified_file.json";
   import data from "./modified_file_truncated.json";
+  import data2 from "./testingSendManyItemsToDatabase.json";
 
   export default {
   created() {
@@ -83,6 +95,9 @@
     return {
       gearDict: data,
       gearList: [],
+      testerItemSource: "",
+      testerItemHash: "",
+      testerItemName: "",
     }
   },
   methods: {
@@ -125,11 +140,18 @@
     putItemInDatabase() {
       let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/items";
 
-      // Define the JSON object you want to send to the API
+      // // Define the JSON object you want to send to the API
+      // const item = {
+      //   itemHash: 'test_item_from_website',
+      //   name: 'name_from_website',
+      //   sourceString: 'source_string_from_website'
+      // }
+
+      // Define the JSON object using text boxes
       const item = {
-        itemHash: 'test_item_from_website',
-        name: 'name_from_website',
-        sourceString: 'source_string_from_website'
+        itemHash: this.testerItemHash,
+        name: this.testerItemName,
+        sourceString: this.testerItemSource
       }
 
       // Convert the JSON object to a string
@@ -202,7 +224,7 @@
     },
     ParseItemsToPush() { 
       let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/manyitems";
-      let itemsArray = Object.values(items)
+      let itemsArray = Object.values(data2)
       const requestObject = {
           items: itemsArray
       }

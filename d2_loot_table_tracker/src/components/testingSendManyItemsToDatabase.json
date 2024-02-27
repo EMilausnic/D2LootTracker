@@ -1,0 +1,583 @@
+{
+    "2671393478": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Truage Casque",
+            "icon": "/common/destiny2_content/icons/01f523bc46fd51415013656e82a57467.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "1495869176",
+        "parentNodeHashes": [
+            3320568106
+        ],
+        "hash": 2671393478,
+        "index": 60,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "3216462744": {
+        "displayProperties": {
+            "description": "",
+            "name": "Mantle of Efrideet",
+            "icon": "/common/destiny2_content/icons/55d4c16ae966ded19c05c2ccf58d1f15.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "2534676958",
+        "parentNodeHashes": [
+            3320568106
+        ],
+        "hash": 3216462744,
+        "index": 64,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "854771406": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Will Sleeves",
+            "icon": "/common/destiny2_content/icons/fa0cae1426256dbbc9804aab8f4ab88e.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "2295273904",
+        "parentNodeHashes": [
+            3320568107
+        ],
+        "hash": 854771406,
+        "index": 66,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "614818250": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Will Vest",
+            "icon": "/common/destiny2_content/icons/6a31bd3b7fa10bb7973777520a950043.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "2509940440",
+        "parentNodeHashes": [
+            3320568107
+        ],
+        "hash": 614818250,
+        "index": 67,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "2051332076": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Will Boots",
+            "icon": "/common/destiny2_content/icons/dde27913e92648e5d7ebd785ef3a1e54.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "2653909130",
+        "parentNodeHashes": [
+            3320568107
+        ],
+        "hash": 2051332076,
+        "index": 68,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "3607959069": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Will Cloak",
+            "icon": "/common/destiny2_content/icons/0a9c78f90e7eb341ccc80613d28f3140.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "1329892341",
+        "parentNodeHashes": [
+            3320568107
+        ],
+        "hash": 3607959069,
+        "index": 69,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "4091644912": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Forerunner Mask",
+            "icon": "/common/destiny2_content/icons/1206619e164a46bc8966a0ede30d3445.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "2255073244",
+        "parentNodeHashes": [
+            3320568100
+        ],
+        "hash": 4091644912,
+        "index": 70,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "3988000795": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Forerunner Grips",
+            "icon": "/common/destiny2_content/icons/5eb330953371d3c2f2bb2faf3cdd05fc.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "3651424085",
+        "parentNodeHashes": [
+            3320568100
+        ],
+        "hash": 3988000795,
+        "index": 71,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "733495341": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Forerunner Vest",
+            "icon": "/common/destiny2_content/icons/a6f394740d7f4876a8be67d2dce94f25.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "1615052875",
+        "parentNodeHashes": [
+            3320568100
+        ],
+        "hash": 733495341,
+        "index": 72,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "227903713": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Forerunner Strides",
+            "icon": "/common/destiny2_content/icons/7c8a3d4469f257de8518c05f7ac8976b.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "932578999",
+        "parentNodeHashes": [
+            3320568100
+        ],
+        "hash": 227903713,
+        "index": 73,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "2305043682": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Forerunner Cloak",
+            "icon": "/common/destiny2_content/icons/b9b0a96f0b74b2545b69166e70e0650e.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "4266736482",
+        "parentNodeHashes": [
+            3320568100
+        ],
+        "hash": 2305043682,
+        "index": 74,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "4140135939": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Companion Mask",
+            "icon": "/common/destiny2_content/icons/b25030081916852c302e1820af0bbc48.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "3352415987",
+        "parentNodeHashes": [
+            3320568101
+        ],
+        "hash": 4140135939,
+        "index": 75,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "392386320": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Companion Sleeves",
+            "icon": "/common/destiny2_content/icons/72f83dc579275f96f176a045b205a8c8.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "845422466",
+        "parentNodeHashes": [
+            3320568101
+        ],
+        "hash": 392386320,
+        "index": 76,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "985853736": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Companion Vest",
+            "icon": "/common/destiny2_content/icons/6fd90ca3775a4ce82f9bbf5eb1f79478.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "3419310182",
+        "parentNodeHashes": [
+            3320568101
+        ],
+        "hash": 985853736,
+        "index": 77,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "2265899022": {
+        "displayProperties": {
+            "description": "",
+            "name": "Iron Companion Boots",
+            "icon": "/common/destiny2_content/icons/c5f339d5fc4b4b4bcd79a8c5e0203c44.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "2931145020",
+        "parentNodeHashes": [
+            3320568101
+        ],
+        "hash": 2265899022,
+        "index": 78,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "4235710903": {
+        "displayProperties": {
+            "description": "",
+            "name": "Wolfswood Cloak",
+            "icon": "/common/destiny2_content/icons/c3215bdb97d456dc79ccf8d3ca7c7cd4.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Iron Banner matches and earn rank-up packages from Lord Saladin.",
+        "sourceHash": 3072862693,
+        "itemHash": "3737404623",
+        "parentNodeHashes": [
+            3320568101
+        ],
+        "hash": 4235710903,
+        "index": 79,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "2575209846": {
+        "displayProperties": {
+            "description": "",
+            "name": "Flowing Cowl (CODA)",
+            "icon": "/common/destiny2_content/icons/feb333a660cf9fd2ea4000721bcccc1c.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Trials tickets and earn rank-up packages from the Emissary of the Nine.",
+        "sourceHash": 1607607347,
+        "itemHash": "3075372781",
+        "parentNodeHashes": [
+            1810187962
+        ],
+        "hash": 2575209846,
+        "index": 80,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "3270873929": {
+        "displayProperties": {
+            "description": "",
+            "name": "Flowing Grips (CODA)",
+            "icon": "/common/destiny2_content/icons/409595be780a0b1f902c6f4fdb372792.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Trials tickets and earn rank-up packages from the Emissary of the Nine.",
+        "sourceHash": 1607607347,
+        "itemHash": "4194072668",
+        "parentNodeHashes": [
+            1810187962
+        ],
+        "hash": 3270873929,
+        "index": 81,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "2647648775": {
+        "displayProperties": {
+            "description": "",
+            "name": "Flowing Vest (CODA)",
+            "icon": "/common/destiny2_content/icons/879a1c0057ab102757407d3950cf9a3a.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Trials tickets and earn rank-up packages from the Emissary of the Nine.",
+        "sourceHash": 1607607347,
+        "itemHash": "508076356",
+        "parentNodeHashes": [
+            1810187962
+        ],
+        "hash": 2647648775,
+        "index": 82,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "1738760879": {
+        "displayProperties": {
+            "description": "",
+            "name": "Flowing Boots (CODA)",
+            "icon": "/common/destiny2_content/icons/867610f1c3d396e9171bf1e3fd27a5ca.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Trials tickets and earn rank-up packages from the Emissary of the Nine.",
+        "sourceHash": 1607607347,
+        "itemHash": "3155320806",
+        "parentNodeHashes": [
+            1810187962
+        ],
+        "hash": 1738760879,
+        "index": 83,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "1654561256": {
+        "displayProperties": {
+            "description": "",
+            "name": "Cloak Judgment (CODA)",
+            "icon": "/common/destiny2_content/icons/8c3d22c892436dc7aaf745b07bfcd934.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Trials tickets and earn rank-up packages from the Emissary of the Nine.",
+        "sourceHash": 1607607347,
+        "itemHash": "1717940633",
+        "parentNodeHashes": [
+            1810187962
+        ],
+        "hash": 1654561256,
+        "index": 84,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "522607092": {
+        "displayProperties": {
+            "description": "",
+            "name": "Floating Cowl",
+            "icon": "/common/destiny2_content/icons/ac868e6950ba153f879969c00b82999b.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Trials tickets and earn rank-up packages from the Emissary of the Nine.",
+        "sourceHash": 1607607347,
+        "itemHash": "400025382",
+        "parentNodeHashes": [
+            1810187960
+        ],
+        "hash": 522607092,
+        "index": 90,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "286022135": {
+        "displayProperties": {
+            "description": "",
+            "name": "Floating Grips",
+            "icon": "/common/destiny2_content/icons/a368b0d915184c3102876da8976d7ed8.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Trials tickets and earn rank-up packages from the Emissary of the Nine.",
+        "sourceHash": 1607607347,
+        "itemHash": "2641591727",
+        "parentNodeHashes": [
+            1810187960
+        ],
+        "hash": 286022135,
+        "index": 91,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "1628434089": {
+        "displayProperties": {
+            "description": "",
+            "name": "Floating Vest",
+            "icon": "/common/destiny2_content/icons/26ae2426b38aaaf5fa99709583c16d92.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Trials tickets and earn rank-up packages from the Emissary of the Nine.",
+        "sourceHash": 1607607347,
+        "itemHash": "548290755",
+        "parentNodeHashes": [
+            1810187960
+        ],
+        "hash": 1628434089,
+        "index": 92,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "3390239917": {
+        "displayProperties": {
+            "description": "",
+            "name": "Floating Boots",
+            "icon": "/common/destiny2_content/icons/94ab615183640498a8660c64948cb863.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Trials tickets and earn rank-up packages from the Emissary of the Nine.",
+        "sourceHash": 1607607347,
+        "itemHash": "854160041",
+        "parentNodeHashes": [
+            1810187960
+        ],
+        "hash": 3390239917,
+        "index": 93,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "56885974": {
+        "displayProperties": {
+            "description": "",
+            "name": "Cloak Relentless",
+            "icon": "/common/destiny2_content/icons/cd362816cc3a55c18f7690c4585864f9.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Complete Trials tickets and earn rank-up packages from the Emissary of the Nine.",
+        "sourceHash": 1607607347,
+        "itemHash": "238320914",
+        "parentNodeHashes": [
+            1810187960
+        ],
+        "hash": 56885974,
+        "index": 94,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "491875658": {
+        "displayProperties": {
+            "description": "",
+            "name": "Cover of the Exile",
+            "icon": "/common/destiny2_content/icons/31edb8424e82f41b239964f502abd4c9.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Trials of Osiris Challenges",
+        "sourceHash": 3390015730,
+        "itemHash": "3275117874",
+        "parentNodeHashes": [
+            1810187966,
+            907398217
+        ],
+        "hash": 491875658,
+        "index": 100,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    },
+    "3470064917": {
+        "displayProperties": {
+            "description": "",
+            "name": "Grips of the Exile",
+            "icon": "/common/destiny2_content/icons/9bcce575517a66a860eb2eab16be3852.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Trials of Osiris Challenges",
+        "sourceHash": 3390015730,
+        "itemHash": "3741471003",
+        "parentNodeHashes": [
+            1810187966,
+            907398217
+        ],
+        "hash": 3470064917,
+        "index": 101,
+        "itemTypeDisplayName": "Gauntlets",
+        "itemTypeAndTierDisplayName": "Legendary Gauntlets"
+    },
+    "2648065715": {
+        "displayProperties": {
+            "description": "",
+            "name": "Vest of the Exile",
+            "icon": "/common/destiny2_content/icons/921289afee1433c1a62c4131733e86df.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Trials of Osiris Challenges",
+        "sourceHash": 3390015730,
+        "itemHash": "938618741",
+        "parentNodeHashes": [
+            1810187966,
+            907398217
+        ],
+        "hash": 2648065715,
+        "index": 102,
+        "itemTypeDisplayName": "Chest Armor",
+        "itemTypeAndTierDisplayName": "Legendary Chest Armor"
+    },
+    "1292344875": {
+        "displayProperties": {
+            "description": "",
+            "name": "Boots of the Exile",
+            "icon": "/common/destiny2_content/icons/c3d1727c67319da36d972c8260480872.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Trials of Osiris Challenges",
+        "sourceHash": 3390015730,
+        "itemHash": "2616071821",
+        "parentNodeHashes": [
+            1810187966,
+            907398217
+        ],
+        "hash": 1292344875,
+        "index": 103,
+        "itemTypeDisplayName": "Leg Armor",
+        "itemTypeAndTierDisplayName": "Legendary Leg Armor"
+    },
+    "3641153516": {
+        "displayProperties": {
+            "description": "",
+            "name": "Cloak of the Exile",
+            "icon": "/common/destiny2_content/icons/5cdd2b34cd9738ebb0b010627bd99e58.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Trials of Osiris Challenges",
+        "sourceHash": 3390015730,
+        "itemHash": "18990920",
+        "parentNodeHashes": [
+            1810187966,
+            907398217
+        ],
+        "hash": 3641153516,
+        "index": 104,
+        "itemTypeDisplayName": "Hunter Cloak",
+        "itemTypeAndTierDisplayName": "Legendary Hunter Cloak"
+    },
+    "4180755053": {
+        "displayProperties": {
+            "description": "",
+            "name": "Pyrrhic Ascent Mask",
+            "icon": "/common/destiny2_content/icons/2a5ea227512c38c003ef5268cac0a9f4.jpg",
+            "hasIcon": true
+        },
+        "sourceString": "Source: Trials of Osiris Challenges",
+        "sourceHash": 3390015730,
+        "itemHash": "1001798188",
+        "parentNodeHashes": [
+            1810187967
+        ],
+        "hash": 4180755053,
+        "index": 105,
+        "itemTypeDisplayName": "Helmet",
+        "itemTypeAndTierDisplayName": "Legendary Helmet"
+    }
+}
