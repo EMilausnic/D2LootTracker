@@ -83,7 +83,7 @@
 
 
 <script>
-  import items from "./modified_file.json";
+  import items from "./FullDatabaseFIle.json";
   import data from "./modified_file_truncated.json";
   import data2 from "./testingSendManyItemsToDatabase.json";
 
@@ -225,30 +225,39 @@
     ParseItemsToPush() { 
       let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/manyitems";
       let itemsArray = Object.values(data2)
-      const requestObject = {
-          items: itemsArray
-      }
-      console.log(requestObject)
-      // Convert the JSON object to a string
-      const itemJSON = JSON.stringify(requestObject);
-      console.log("stringified json object: " + itemJSON)
-      let xhr = new XMLHttpRequest();
-      
-      xhr.open("PUT", APITestURL, true);
-      // Set the Content-Type header to application/json
-      xhr.setRequestHeader("Content-Type", "application/json");
-      // xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
-     
-      xhr.onreadystatechange = function(){
-        if(this.status === 200){
-          console.log("this.responseText: "+this.responseText);
-        }
-        else{
-          console.log("failed??")
-        }
-      }
+      // Split the itemsArray into chunks of 50 items each
+      const chunkSize = 25;
+      for (let i = 0; i < itemsArray.length; i += chunkSize) {
+          // setTimeout(() => {}, 100000);
+          const chunk = itemsArray.slice(i, i + chunkSize);
 
-      xhr.send(itemJSON); 
+          const requestObject = {
+              items: chunk
+          };
+
+          // Convert the JSON object to a string
+          const itemJSON = JSON.stringify(requestObject);
+          console.log("Sending chunk:", chunk);
+
+          let xhr = new XMLHttpRequest();
+          xhr.open("PUT", APITestURL, true);
+          // Set the Content-Type header to application/json
+          xhr.setRequestHeader("Content-Type", "application/json");
+
+          xhr.onreadystatechange = function() {
+              if (this.readyState === 4) {
+                  if (this.status === 200) {
+                      console.log("Chunk sent successfully:", chunk);
+                      console.log("Response:", this.responseText);
+                  } else {
+                      console.error("Failed to send chunk:", chunk);
+                      console.error("Response:", this.responseText);
+                  }
+              }
+          };
+
+          xhr.send(itemJSON);
+        }
     },
     queryThePlatform() {
       let apiKey = "14e8991258cb40dbb21198e66f69edbe";
