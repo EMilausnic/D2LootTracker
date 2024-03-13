@@ -33,7 +33,12 @@
 
       <button
       @click="makeAPITestCall">
-       get items from API
+      get items from API
+      </button>
+
+      <button
+      @click="getSourceStringItems">
+      get all SOURCESTRING items
       </button>
 
       <button
@@ -62,8 +67,24 @@
         put everything into the database!
       </button>
 
+      <v-item-group>
+        <v-item v-for="gear in gearList">
+          <v-card>
+            <template v-slot:title>
+              Name: {{gear.name}}
+            </template>
 
-      <table>
+            <template v-slot:subtitle>
+              {{gear.sourceString}}
+            </template>
+
+            <template v-slot:text>
+              Hash: {{gear.hash}}
+            </template>
+          </v-card>
+        </v-item>
+      </v-item-group>
+      <!-- <table>
         <tr>
           <td>Item Name</td>
           <td>Source Location</td>
@@ -77,7 +98,7 @@
             <img :src="gear.iconLink"/>
           </td>
         </tr>
-      </table>
+      </table> -->
   </div>
 </template>
 
@@ -104,11 +125,11 @@
     fillGearList() {
       Object.values(data).forEach(item => {
         // Adding this in to space things out a little better
-        this.gearList.push({
-          name: "======================",
-          sourceString: "=============================",
-          hash: "======================",
-        })  
+        // this.gearList.push({
+        //   name: "======================",
+        //   sourceString: "=============================",
+        //   hash: "======================",
+        // })  
 
         this.gearList.push({
           name: item.displayProperties.name,
@@ -118,6 +139,25 @@
         })  
       });
       console.log(this.gearList)
+    },
+    getSourceStringItems() {
+      // this works! I am able to get all items from the test ap that I made!
+      let sourceString = "Solstice"
+      let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/Solstice";
+      let xhr = new XMLHttpRequest();
+      
+      xhr.open("GET", APITestURL, true);
+     
+      xhr.onreadystatechange = function(){
+        if(this.status === 200){
+          console.log("this.responseText: "+this.responseText);
+        }
+        else{
+          console.log("failed??")
+        }
+      }
+
+      xhr.send(); 
     },
     makeAPITestCall() {
       // this works! I am able to get all items from the test ap that I made!
@@ -184,14 +224,14 @@
       }
       const item3 = {
           itemHash: 'test_item_from_website3',
-          displayProperties: displayProperties,
+          displayProperties: name_data,
           sourceString: 'source_string_from_website3',
           itemTypeDisplayName: 'itemTypeDisplayName3',
           itemTypeAndTierDisplayName: 'itemTypeAndTierDisplayName3',
       }
       const item2 = {
           itemHash: 'test_item_from_website2',
-          displayProperties: displayProperties,
+          displayProperties: name_data,
           sourceString: 'source_string_from_website2',
           itemTypeDisplayName: 'itemTypeDisplayName2',
           itemTypeAndTierDisplayName: 'itemTypeAndTierDisplayName2',
