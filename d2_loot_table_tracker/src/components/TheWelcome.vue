@@ -69,19 +69,21 @@
 
       <v-item-group>
         <v-item v-for="gear in gearList">
-          <v-card>
-            <template v-slot:title>
-              Name: {{gear.name}}
-            </template>
+          <div class="d-flex align-center flex-column">
+            <v-card width="400">
+              <template v-slot:title>
+                {{gear.name}}
+              </template>
 
-            <template v-slot:subtitle>
-              {{gear.sourceString}}
-            </template>
+              <template v-slot:subtitle>
+                {{gear.sourceString}}
+              </template>
 
-            <template v-slot:text>
-              Hash: {{gear.hash}}
-            </template>
-          </v-card>
+              <template v-slot:text>
+                {{gear.hash}}
+              </template>
+            </v-card>
+          </div>
         </v-item>
       </v-item-group>
       <!-- <table>
