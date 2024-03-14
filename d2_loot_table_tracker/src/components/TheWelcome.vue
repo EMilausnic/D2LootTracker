@@ -26,63 +26,78 @@
         gety users token
       </button> -->
       
-      <button
+      <v-btn
       @click="fillGearList">
         get gear list filled
-      </button>
+      </v-btn>
 
-      <button
+      <v-btn
       @click="makeAPITestCall">
       get items from API
-      </button>
+      </v-btn>
 
-      <button
+      <v-btn
       @click="getSourceStringItems">
       get all SOURCESTRING items
-      </button>
+      </v-btn>
 
-      <button
+      <v-btn
       @click="putItemInDatabase">
         add single item into database
-      </button>
+      </v-btn>
 
-      <p>Enter testerItemName: {{ testerItemName }}</p>
-      <input v-model="testerItemName" placeholder="edit me" />
+      <!-- <p>Enter testerItemName: {{ testerItemName }}</p> -->
+      <v-text-field 
+        v-model="testerItemName" 
+        label="Enter item name"
+       />
 
-      <p>Enter testerItemHash: {{ testerItemHash}}</p>
-      <input v-model="testerItemHash" placeholder="edit me" />
+      <!-- <p>Enter testerItemHash: {{ testerItemHash}}</p> -->
+      <v-text-field v-model="testerItemHash"
+        label="Enter item hash" />
 
-      <p>Enter testerItemSource: {{ testerItemSource }}</p>
-      <input v-model="testerItemSource" placeholder="edit me" />
+      <!-- <p>Enter testerItemSource: {{ testerItemSource }}</p> -->
+      <v-text-field v-model="testerItemSource" 
+        label="Enter item source" />
 
 
 
-      <button
+      <v-btn
       @click="putMultiupleItemsInDatabase">
         add 2 test items into the database
-      </button>
+      </v-btn>
 
-      <button
+      <v-btn
       @click="ParseItemsToPush">
         put everything into the database!
-      </button>
+      </v-btn>
 
       <v-item-group>
-        <v-item v-for="gear in gearList">
-          <div class="d-flex align-center flex-column">
-            <v-card width="400">
-              <template v-slot:title>
-                {{gear.name}}
-              </template>
+        <v-item v-for="gear in gearList" >
+          <div class="d-inline-flex  align-center" style="margin: 0px;">
+          <!-- <v-sheet class="d-inline-flex bg-surface-variant"style="padding: 5px;"> -->
+            <v-avatar class="ma-0 " rounded="0" size="125">
 
-              <template v-slot:subtitle>
-                {{gear.sourceString}}
-              </template>
+              <img :src="gear.iconLink" width="96px" height="96px"/> 
+            </v-avatar>
+            <v-card>
+                
+                <v-card-text class="text-h5 py-2">
+                  {{gear.name}}
+                </v-card-text>
 
-              <template v-slot:text>
-                {{gear.hash}}
-              </template>
-            </v-card>
+                <v-card-text class="py-0" >
+                  {{gear.sourceString}}
+                </v-card-text>
+
+                <v-card-text class="py-1">
+                  Gear Hash: {{gear.hash}}
+                </v-card-text>
+              </v-card>
+              
+              <!-- <v-img >{{gear.iconLink}}</v-img> -->
+
+          <!-- </v-sheet> -->
           </div>
         </v-item>
       </v-item-group>
@@ -140,6 +155,8 @@
           hash: item.hash,
         })  
       });
+      // only pick a few items to show
+      
       console.log(this.gearList)
     },
     getSourceStringItems() {
