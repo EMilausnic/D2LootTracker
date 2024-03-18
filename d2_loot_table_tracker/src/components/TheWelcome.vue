@@ -133,6 +133,7 @@
   export default {
   created() {
     this.handleCallback();
+    // TODO: call the function that gets all of the items from the database (from like 2 sources for now)
   },
   data() {
     return {
@@ -141,18 +142,13 @@
       testerItemSource: "",
       testerItemHash: "",
       testerItemName: "",
-      responceData: []
+      responceData: [],
+      ItemsFromDatabase:{}
     }
   },
   methods: {
     fillGearList() {
       Object.values(data).forEach(item => {
-        // Adding this in to space things out a little better
-        // this.gearList.push({
-        //   name: "======================",
-        //   sourceString: "=============================",
-        //   hash: "======================",
-        // })  
 
         this.gearList.push({
           name: item.displayProperties.name,
@@ -166,7 +162,6 @@
       console.log(this.gearList)
     },
     getSourceStringItems() {
-      // this works! I am able to get all items from the test ap that I made!
       let sourceString = "Solstice"
       let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/" +sourceString;
       let xhr = new XMLHttpRequest();
@@ -175,20 +170,19 @@
      
       xhr.onreadystatechange = function(){
         if(this.status === 200){
-          // console.log("this.responseText: "+this.responseText);
-          // console.log("this.response.Items: "+this.responce.Items);
           let response = JSON.parse(this.responseText);
           let items = response.Items; // Accessing the "Items" property
           console.log("Items:", items);
-
-          // Now you can loop through the items array and access individual items
-          items.forEach(item => {
-            console.log("Name:", item.Name.S);
-            // Access other properties as needed
-      });
+          this.ItemsFromDatabase = { ...this.ItemsFromDatabase, [sourceString]: items }; // ok cool not 100% sure why this works and I should look into it more but it does!
+          console.log(this.ItemsFromDatabase)
+          //  loop through the items array and access individual items
+      //     items.forEach(item => {
+      //       console.log("Name:", item.Name.S);
+      //       // Access other properties as needed
+      // });
         }
         else{
-          console.log("failed??")
+          console.log("failed?? on"+sourceString)
         }
       }
 
