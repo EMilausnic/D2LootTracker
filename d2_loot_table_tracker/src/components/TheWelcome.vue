@@ -31,10 +31,15 @@
         get gear list filled
       </v-btn>
 
-      <v-btn
-      @click="makeAPITestCall">
-      get items from API
-      </v-btn>
+        <v-btn
+        @click="makeAPITestCall">
+        get items from API
+        </v-btn>
+
+        <v-btn
+        @click="AddSOMEItemsFromAPI">
+        Log a few items form api, must make api call first
+        </v-btn>
 
       <v-btn
       @click="getSourceStringItems">
@@ -136,6 +141,7 @@
       testerItemSource: "",
       testerItemHash: "",
       testerItemName: "",
+      responceData: []
     }
   },
   methods: {
@@ -162,14 +168,24 @@
     getSourceStringItems() {
       // this works! I am able to get all items from the test ap that I made!
       let sourceString = "Solstice"
-      let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/Solstice";
+      let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/" +sourceString;
       let xhr = new XMLHttpRequest();
       
       xhr.open("GET", APITestURL, true);
      
       xhr.onreadystatechange = function(){
         if(this.status === 200){
-          console.log("this.responseText: "+this.responseText);
+          // console.log("this.responseText: "+this.responseText);
+          // console.log("this.response.Items: "+this.responce.Items);
+          let response = JSON.parse(this.responseText);
+          let items = response.Items; // Accessing the "Items" property
+          console.log("Items:", items);
+
+          // Now you can loop through the items array and access individual items
+          items.forEach(item => {
+            console.log("Name:", item.Name.S);
+            // Access other properties as needed
+      });
         }
         else{
           console.log("failed??")
@@ -179,6 +195,34 @@
       xhr.send(); 
     },
     makeAPITestCall() {
+      // this works! I am able to get all items from the test ap that I made!
+      let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/items";
+      let xhr = new XMLHttpRequest();
+      // let responceData = "";
+      xhr.open("GET", APITestURL, true);
+     
+      console.log(typeof this.responceData);
+      xhr.onreadystatechange = function(){
+        if(this.status === 200){
+          // console.log("this.responseText: "+this.responseText);
+          this.responceData = this.responseText // ISSUE this is a string and make sthings supperrrrr annnoyyying
+          console.log("responceData "+this.responceData);
+          console.log("responceData "+this.responceData.length);
+      console.log(typeof this.responceData);
+          
+        }
+        else{
+          console.log("failed??")
+        }
+      }
+
+      xhr.send(); 
+    },
+    AddSOMEItemsFromAPI() {
+
+
+    },
+    GetItemsFromDatabase() {
       // this works! I am able to get all items from the test ap that I made!
       let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/items";
       let xhr = new XMLHttpRequest();
@@ -283,7 +327,8 @@
     },
     ParseItemsToPush() { 
       let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/manyitems";
-      let itemsArray = Object.values(data2)
+      let itemsArray = Object.values(items)
+      // let itemsArray = Object.values(data2)
       // Split the itemsArray into chunks of 50 items each
       const chunkSize = 25;
       for (let i = 0; i < itemsArray.length; i += chunkSize) {
