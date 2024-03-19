@@ -25,25 +25,26 @@
       @click="getTokenResponce">
         gety users token
       </button> -->
-      
+
       <v-btn
-      @click="fillGearList">
-        get gear list filled
+      @click="makeAPITestCall">
+      get items from API
       </v-btn>
 
-        <v-btn
-        @click="makeAPITestCall">
-        get items from API
-        </v-btn>
-
-        <v-btn
-        @click="AddSOMEItemsFromAPI">
-        Log a few items form api, must make api call first
-        </v-btn>
+      <v-btn
+      @click="AddSOMEItemsFromAPI">
+      Log a few items form api, must make api call first
+      </v-btn>
 
       <v-btn
       @click="getSourceStringItems">
-      get all SOURCESTRING items
+      get all Solcstise items
+      </v-btn>
+
+
+      <v-btn
+      @click="getItemsUsingSourceStringList">
+      get items forn database using the given source 
       </v-btn>
 
       <v-btn
@@ -78,56 +79,57 @@
       </v-btn>
 
       <v-item-group>
-        <v-item v-for="gear in gearList" >
-          <div class="d-inline-flex  align-center" style="margin: 0px;">
-          <!-- <v-sheet class="d-inline-flex bg-surface-variant"style="padding: 5px;"> -->
-            <v-avatar class="ma-0 " rounded="0" size="125">
+        <v-item v-for="(itemsFromSource, sourceString) in ItemsFromDatabase" style="margin-bottom: 5px;">
+            {{ sourceString }}
+          <div class="align-center" style="margin: 5px;">
+            <!-- <div> -->
+            <v-card 
+            v-for="(item, index) in itemsFromSource"  
+            :key="index"
+            style="margin: 5px;"
+            >
+              <!-- {{ item }} -->
+              <template v-slot:prepend>
+                <img v-if="item.iconLink && item.iconLink['S']" :src="'https://www.bungie.net' + item.iconLink['S']" width="96px" height="96px"/> 
+              </template>
 
-              <img :src="gear.iconLink" width="96px" height="96px"/> 
-            </v-avatar>
-            <v-card>
-                
+              <!-- <template v-slot:prepend>
+                <img :src="item.iconLink" width="96px" height="96px"/> 
+              </template> -->
                 <v-card-text class="text-h5 py-2">
-                  {{gear.name}}
-                </v-card-text>
-
-                <v-card-text class="py-0" >
-                  {{gear.sourceString}}
+                  <!-- TODO: figure out why I need to include ["S"] on all of these -->
+                  {{item.Name["S"]}}
                 </v-card-text>
 
                 <v-card-text class="py-1">
-                  Gear Hash: {{gear.hash}}
+                  Gear Hash: {{item.ItemHash["S"]}}
+                </v-card-text>
+
+                <!-- <v-card-text class="py-0" >
+                  {{item.SourceString["S"]}}
+                </v-card-text> -->
+
+                <v-card-text class="py-0" >
+                  {{item.itemTypeAndTierDisplayName["S"]}}
+                </v-card-text> 
+
+               <v-card-text class="py-0" >
+                  {{item.itemTypeDisplayName["S"]}}
                 </v-card-text>
               </v-card>
               
-              <!-- <v-img >{{gear.iconLink}}</v-img> -->
 
-          <!-- </v-sheet> -->
           </div>
         </v-item>
       </v-item-group>
-      <!-- <table>
-        <tr>
-          <td>Item Name</td>
-          <td>Source Location</td>
-          <td>Hash for this item</td>
-        </tr>
-        <tr v-for="gear in gearList">
-          <td>{{gear.name}}</td>
-          <td>{{gear.sourceString}}</td>
-          <td>{{gear.hash}}</td>
-          <td>
-            <img :src="gear.iconLink"/>
-          </td>
-        </tr>
-      </table> -->
   </div>
 </template>
 
 
 <script>
   import items from "./FullDatabaseFIle.json";
-  import data from "./modified_file_truncated.json";
+  import { VueElement } from "vue";
+import data from "./modified_file_truncated.json";
   import data2 from "./testingSendManyItemsToDatabase.json";
 
   export default {
@@ -137,30 +139,29 @@
   },
   data() {
     return {
-      gearDict: data,
-      gearList: [],
       testerItemSource: "",
       testerItemHash: "",
       testerItemName: "",
       responceData: [],
-      ItemsFromDatabase:{}
+      ItemsFromDatabase:{},
+      listOfSourceStrings: ["Solstice", "Xûr", "Last Wish raid.", "Bright Engrams"]
     }
   },
   methods: {
-    fillGearList() {
-      Object.values(data).forEach(item => {
+    // fillGearList() {
+    //   Object.values(data).forEach(item => {
 
-        this.gearList.push({
-          name: item.displayProperties.name,
-          iconLink: "https://www.bungie.net"+item.displayProperties.icon,
-          sourceString: item.sourceString,
-          hash: item.hash,
-        })  
-      });
-      // only pick a few items to show
+    //     this.gearList.push({
+    //       name: item.displayProperties.name,
+    //       iconLink: "https://www.bungie.net"+item.displayProperties.icon,
+    //       sourceString: item.sourceString,
+    //       hash: item.hash,
+    //     })  
+    //   });
+    //   // only pick a few items to show
       
-      console.log(this.gearList)
-    },
+    //   console.log(this.gearList)
+    // },
     getSourceStringItems() {
       let sourceString = "Solstice"
       let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/" +sourceString;
@@ -188,6 +189,76 @@
 
       xhr.send(); 
     },
+    getItemsUsingSourceStringList() {
+      const promises = [];
+
+    for (let i = 0; i < this.listOfSourceStrings.length; i++) {
+        const sourceString = this.listOfSourceStrings[i];
+        let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/" + sourceString;
+
+        // Create a promise for each API call
+        const promise = new Promise((resolve, reject) => {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", APITestURL, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        resolve({ sourceString, items: response.Items });
+                    } else {
+                        reject(`Failed to fetch items for ${sourceString}`);
+                    }
+                }
+            };
+            xhr.send();
+        });
+
+        promises.push(promise);
+    }
+
+    // Wait for all promises to resolve
+    Promise.all(promises)
+        .then(results => {
+            // Populate ItemsFromDatabase dictionary
+            results.forEach(({ sourceString, items }) => {
+                this.ItemsFromDatabase[sourceString] = items;
+            });
+            console.log("ItemsFromDatabase:", this.ItemsFromDatabase);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    },
+    //   // Object.values(this.listOfSourceStrings).forEach(sourceString => {
+    //   for (let i = 0; i < this.listOfSourceStrings.length; i++) {
+    //     const sourceString = this.listOfSourceStrings[i];
+    //     let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/" +sourceString;
+    //     let xhr = new XMLHttpRequest();
+    //     let items = [];
+    //     xhr.open("GET", APITestURL, true);
+      
+    //     xhr.onreadystatechange = function(){
+    //       if(this.status === 200){
+    //         let response = JSON.parse(this.responseText);
+    //         items = response.Items; // Accessing the "Items" property
+    //         console.log("Items:", items);
+    //         // ok cool not 100% sure why this works and I should look into it more but it does!
+    //         // this.ItemsFromDatabase = { ...this.ItemsFromDatabase, [sourceString]: items }; 
+    //         // console.log(this.ItemsFromDatabase)
+    //       }
+    //       else{
+    //         console.log("failed?? on"+sourceString)
+    //       }
+    //     }
+ 
+    //     xhr.send(); 
+    //     // for the items to be correctly added to the dictionary they have to be added here and not in the onreadystatechange part
+    //     this.ItemsFromDatabase[sourceString] = items;
+    //   }
+    //   // })
+    //   console.log("after getting all the items")
+    //   console.log(this.ItemsFromDatabase)
+    // },
     makeAPITestCall() {
       // this works! I am able to get all items from the test ap that I made!
       let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/items";
