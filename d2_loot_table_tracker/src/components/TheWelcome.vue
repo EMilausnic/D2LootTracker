@@ -1,140 +1,95 @@
+<link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet"></link>
+
 
 <template>
   <div>
-      <!-- <button
-      @click="getGun">
-        get gun
-      </button>
-
-      <button 
-        @click="queryThePlatform">
-        query platform,
-      </button>
-
-      <button
-      @click="getProfile">
-        Get users profile
-      </button>
-      
-      <button
-      @click="haveUserSignInOnDiffTab">
-        Link through a new tab
-      </button>
-      
-      <button
-      @click="getTokenResponce">
-        gety users token
-      </button> -->
-
       <v-btn
       @click="makeAPITestCall">
       get items from API
       </v-btn>
 
-      <v-btn
-      @click="AddSOMEItemsFromAPI">
-      Log a few items form api, must make api call first
+      <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
       </v-btn>
-
-      <v-btn
-      @click="getSourceStringItems">
-      get all Solcstise items
-      </v-btn>
-
-
-      <v-btn
-      @click="getItemsUsingSourceStringList">
-      get items forn database using the given source 
-      </v-btn>
-
-      <v-btn
-      @click="putItemInDatabase">
-        add single item into database
-      </v-btn>
-
-      <!-- <p>Enter testerItemName: {{ testerItemName }}</p> -->
-      <v-text-field 
-        v-model="testerItemName" 
-        label="Enter item name"
-       />
-
-      <!-- <p>Enter testerItemHash: {{ testerItemHash}}</p> -->
-      <v-text-field v-model="testerItemHash"
-        label="Enter item hash" />
-
-      <!-- <p>Enter testerItemSource: {{ testerItemSource }}</p> -->
-      <v-text-field v-model="testerItemSource" 
-        label="Enter item source" />
-
-
-
-      <v-btn
-      @click="putMultiupleItemsInDatabase">
-        add 2 test items into the database
-      </v-btn>
-
       <v-btn
       @click="ParseItemsToPush">
         put everything into the database!
       </v-btn>
 
-      <v-item-group>
-        <v-item v-for="(itemsFromSource, sourceString) in ItemsFromDatabase" style="margin-bottom: 5px;">
+      <!-- THE LAYOUT FOR THE ITEMS TO BE DISPLAYED -->
+      <div>
+        <v-row
+         no-gutters
+         v-for="(itemsFromSource, sourceString) in ItemsFromDatabase">
+          <!-- <v-col
+            v-for="(itemsFromSource, sourceString) in ItemsFromDatabase"
+          > -->
+          <v-row
+          no-gutters
+          style="
+            text-align: center;
+            color: antiquewhite;
+            font-weight: 600;
+            font-size: x-large;
+            padding-top: 20px;
+            width:-webkit-fill-available
+          ">
             {{ sourceString }}
-          <div class="align-center" style="margin: 5px;">
-            <!-- <div> -->
-            <v-card 
-            v-for="(item, index) in itemsFromSource"  
-            :key="index"
-            style="margin: 5px;"
-            >
-              <!-- {{ item }} -->
-              <template v-slot:prepend>
-                <img v-if="item.iconLink && item.iconLink['S']" :src="'https://www.bungie.net' + item.iconLink['S']" width="96px" height="96px"/> 
-              </template>
+          </v-row>
 
-              <!-- <template v-slot:prepend>
-                <img :src="item.iconLink" width="96px" height="96px"/> 
-              </template> -->
-                <v-card-text class="text-h5 py-2">
-                  <!-- TODO: figure out why I need to include ["S"] on all of these -->
-                  {{item.Name["S"]}}
-                </v-card-text>
+            <v-row no-gutters>
+              <v-card 
+                v-for="(item, index) in itemsFromSource"  
+                :key="index"
+                style="margin: 5px;
+                width: 230px;
+                height: 250px;
+                background-color: #f8f9ffe3;"
 
-                <v-card-text class="py-1">
-                  Gear Hash: {{item.ItemHash["S"]}}
-                </v-card-text>
+                >
+                  
+                    <v-card-text class="text-h5 py-2"> 
+                      <!-- TODO: figure out why I need to include ["S"] on all of these -->
+                      {{item.Name["S"]}} 
+                    </v-card-text>
+                  <template v-slot:prepend>
+                    <img v-if="item.iconLink && item.iconLink['S']" :src="'https://www.bungie.net' + item.iconLink['S']" width="96px" height="96px"/> 
+                  </template> 
+                  
+                    <!-- HEART ICON FOR LIKING -->
+                  
+                    <v-card-text class="py-1">
+                      Gear Hash: {{item.ItemHash["S"]}}
+                    </v-card-text>
 
-                <!-- <v-card-text class="py-0" >
-                  {{item.SourceString["S"]}}
-                </v-card-text> -->
+                    <v-card-text class="py-0" >
+                      {{item.itemTypeAndTierDisplayName["S"]}}
+                    </v-card-text> 
 
-                <v-card-text class="py-0" >
-                  {{item.itemTypeAndTierDisplayName["S"]}}
-                </v-card-text> 
+                  <v-card-text class="py-0" >
+                      {{item.itemTypeDisplayName["S"]}}
+                    </v-card-text>
+                  </v-card>
 
-               <v-card-text class="py-0" >
-                  {{item.itemTypeDisplayName["S"]}}
-                </v-card-text>
-              </v-card>
-              
-
-          </div>
-        </v-item>
-      </v-item-group>
+            </v-row>
+          <!-- </v-col> -->
+        </v-row>
+      </div>
   </div>
 </template>
 
-
+ 
 <script>
   import items from "./FullDatabaseFIle.json";
   import { VueElement } from "vue";
-import data from "./modified_file_truncated.json";
+  import data from "./modified_file_truncated.json";
   import data2 from "./testingSendManyItemsToDatabase.json";
+  import '@mdi/font/css/materialdesignicons.css' // this is the import that gets icons working!!!!
 
   export default {
   created() {
     this.handleCallback();
+    this.getItemsUsingSourceStringList();
     // TODO: call the function that gets all of the items from the database (from like 2 sources for now)
   },
   data() {
@@ -144,24 +99,11 @@ import data from "./modified_file_truncated.json";
       testerItemName: "",
       responceData: [],
       ItemsFromDatabase:{},
-      listOfSourceStrings: ["Solstice", "Xûr", "Last Wish raid.", "Bright Engrams"]
+      listOfSourceStrings: ["\"King's Fall\" Raid", "Xûr", "Last Wish raid.", "Bright Engrams", "Dungeon \"Duality\"", "Season of the Lost Ritual Playlists"],
+      
     }
   },
   methods: {
-    // fillGearList() {
-    //   Object.values(data).forEach(item => {
-
-    //     this.gearList.push({
-    //       name: item.displayProperties.name,
-    //       iconLink: "https://www.bungie.net"+item.displayProperties.icon,
-    //       sourceString: item.sourceString,
-    //       hash: item.hash,
-    //     })  
-    //   });
-    //   // only pick a few items to show
-      
-    //   console.log(this.gearList)
-    // },
     getSourceStringItems() {
       let sourceString = "Solstice"
       let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/" +sourceString;
@@ -176,11 +118,6 @@ import data from "./modified_file_truncated.json";
           console.log("Items:", items);
           this.ItemsFromDatabase = { ...this.ItemsFromDatabase, [sourceString]: items }; // ok cool not 100% sure why this works and I should look into it more but it does!
           console.log(this.ItemsFromDatabase)
-          //  loop through the items array and access individual items
-      //     items.forEach(item => {
-      //       console.log("Name:", item.Name.S);
-      //       // Access other properties as needed
-      // });
         }
         else{
           console.log("failed?? on"+sourceString)

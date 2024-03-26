@@ -1,29 +1,25 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="Destiny 2 loot tracker!!" />
-
-      <nav>
-        <RouterLink to="/">Sign In</RouterLink>
-        <RouterLink to="/about">Guns</RouterLink>
-      </nav>
-    </div>
-  </header>
-
+    <h1 style="font-family: monospace;font-size: xxx-large;color: snow;">
+      Destiny 2 Loot Pool Guide
+    </h1>
+    
   <RouterView />
 </template>
 
 <style scoped>
+#app {
+  width: auto !important;
+  max-width: auto !important;
+
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
+  background-color: blueviolet;
 }
 
 .logo {
@@ -56,30 +52,4 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>

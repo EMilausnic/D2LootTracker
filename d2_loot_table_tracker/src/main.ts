@@ -3,7 +3,7 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-
+import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loader
 // Vuetify
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
@@ -14,7 +14,6 @@ const vuetify = createVuetify({
   components,
   directives,
 })
-
 
 const app = createApp(App)
 
