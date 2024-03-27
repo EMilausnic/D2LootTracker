@@ -4,13 +4,14 @@
 <template>
   <div>
       <v-btn
+      @click="haveUserSignInOnDiffTab">
+      sign into bungie acct
+      </v-btn>
+      <v-btn
       @click="makeAPITestCall">
       get items from API
       </v-btn>
 
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
       <v-btn
       @click="ParseItemsToPush">
         put everything into the database!
@@ -57,7 +58,15 @@
                   </template> 
                   
                     <!-- HEART ICON FOR LIKING -->
-                  
+                    <template v-slot:append style="padding-bottom: 45px;padding-left: 55px;" color="transparent">
+                      <!-- <v-btn icon v-bind:class="{'unfavored': !clicked, 'favored': clicked}" v-on:click ="clicked = !clicked"> -->
+                        <v-icon 
+                        v-bind:class="{'unfavored': !clicked, 'favored': clicked}" v-on:click ="clicked = !clicked"
+                        >mdi-heart</v-icon>
+                      <!-- </v-btn> -->
+                      
+                    </template>
+                      
                     <v-card-text class="py-1">
                       Gear Hash: {{item.ItemHash["S"]}}
                     </v-card-text>
@@ -69,6 +78,8 @@
                   <v-card-text class="py-0" >
                       {{item.itemTypeDisplayName["S"]}}
                     </v-card-text>
+
+                      
                   </v-card>
 
             </v-row>
@@ -100,7 +111,7 @@
       responceData: [],
       ItemsFromDatabase:{},
       listOfSourceStrings: ["\"King's Fall\" Raid", "Xûr", "Last Wish raid.", "Bright Engrams", "Dungeon \"Duality\"", "Season of the Lost Ritual Playlists"],
-      
+      clicked: false
     }
   },
   methods: {
@@ -544,3 +555,17 @@
   },
 };
 </script>
+
+<style>
+
+  .v-card-item__append {
+    padding-bottom: 65px;
+    padding-left: 55px;
+  }
+  .unfavored {
+    color: rgba(116, 38, 51, 0.438)
+  }
+  .favored {
+    color: pink
+  }
+</style>
