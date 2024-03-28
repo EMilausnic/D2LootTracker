@@ -46,7 +46,6 @@
                 width: 230px;
                 height: 250px;
                 background-color: #f8f9ffe3;"
-
                 >
                   
                     <v-card-text class="text-h5 py-2"> 
@@ -59,7 +58,7 @@
                   
                     <!-- HEART ICON FOR LIKING -->
                     <template v-slot:append style="padding-bottom: 45px;padding-left: 55px;" color="transparent">
-                      <!-- <v-btn icon v-bind:class="{'unfavored': !clicked, 'favored': clicked}" v-on:click ="clicked = !clicked"> -->
+                      <!-- TODO:  The color change here works, but applies to ALLLLL of the buttons, they all need their own v-model? -->
                         <v-icon 
                         v-bind:class="{'unfavored': !clicked, 'favored': clicked}" v-on:click ="clicked = !clicked"
                         >mdi-heart</v-icon>
@@ -100,7 +99,9 @@
   export default {
   created() {
     this.handleCallback();
+    this.initalizeAllOfTheSourceStrings();
     this.getItemsUsingSourceStringList();
+    // this.getItemsUsingSourceStringList();
     // TODO: call the function that gets all of the items from the database (from like 2 sources for now)
   },
   data() {
@@ -111,7 +112,8 @@
       responceData: [],
       ItemsFromDatabase:{},
       listOfSourceStrings: ["\"King's Fall\" Raid", "Xûr", "Last Wish raid.", "Bright Engrams", "Dungeon \"Duality\"", "Season of the Lost Ritual Playlists"],
-      clicked: false
+      clicked: false,
+      AllSourceStrings: []
     }
   },
   methods: {
@@ -138,10 +140,15 @@
       xhr.send(); 
     },
     getItemsUsingSourceStringList() {
-      const promises = [];
+      console.log(this.AllSourceStrings)
+    // NOW ADD ALLL THE ITEMS TO THE WEBPAGE
+    const promises = [];
 
     for (let i = 0; i < this.listOfSourceStrings.length; i++) {
+    // for (let i = 0; i < this.AllSourceStrings.length; i++) { // I want to get this way working. gotta look into the timings and all 
+      
         const sourceString = this.listOfSourceStrings[i];
+        console.log(sourceString)
         let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/" + sourceString;
 
         // Create a promise for each API call
@@ -177,51 +184,27 @@
             console.error(error);
         });
     },
-    //   // Object.values(this.listOfSourceStrings).forEach(sourceString => {
-    //   for (let i = 0; i < this.listOfSourceStrings.length; i++) {
-    //     const sourceString = this.listOfSourceStrings[i];
-    //     let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/" +sourceString;
-    //     let xhr = new XMLHttpRequest();
-    //     let items = [];
-    //     xhr.open("GET", APITestURL, true);
-      
-    //     xhr.onreadystatechange = function(){
-    //       if(this.status === 200){
-    //         let response = JSON.parse(this.responseText);
-    //         items = response.Items; // Accessing the "Items" property
-    //         console.log("Items:", items);
-    //         // ok cool not 100% sure why this works and I should look into it more but it does!
-    //         // this.ItemsFromDatabase = { ...this.ItemsFromDatabase, [sourceString]: items }; 
-    //         // console.log(this.ItemsFromDatabase)
-    //       }
-    //       else{
-    //         console.log("failed?? on"+sourceString)
-    //       }
-    //     }
- 
-    //     xhr.send(); 
-    //     // for the items to be correctly added to the dictionary they have to be added here and not in the onreadystatechange part
-    //     this.ItemsFromDatabase[sourceString] = items;
-    //   }
-    //   // })
-    //   console.log("after getting all the items")
-    //   console.log(this.ItemsFromDatabase)
-    // },
     makeAPITestCall() {
       // this works! I am able to get all items from the test ap that I made!
       let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/items";
       let xhr = new XMLHttpRequest();
       // let responceData = "";
       xhr.open("GET", APITestURL, true);
-     
+      let tempArray = [];
       console.log(typeof this.responceData);
       xhr.onreadystatechange = function(){
         if(this.status === 200){
           // console.log("this.responseText: "+this.responseText);
-          this.responceData = this.responseText // ISSUE this is a string and make sthings supperrrrr annnoyyying
-          console.log("responceData "+this.responceData);
-          console.log("responceData "+this.responceData.length);
-      console.log(typeof this.responceData);
+          
+          let response = JSON.parse(xhr.responseText);
+          response.forEach(function(item) {
+
+            console.log(tempArray.includes(item.SourceString));
+            if (!tempArray.includes(item.SourceString)) {
+              // console.log("Adding " + item.SourceString + " into array. I don't think it's already in there");
+              tempArray.push(item.SourceString);
+            }
+          }.bind(this)); // binding 'this' to the current context
           
         }
         else{
@@ -230,9 +213,37 @@
       }
 
       xhr.send(); 
+      console.log(this.AllSourceStrings)
+      this.AllSourceStrings = tempArray
     },
-    AddSOMEItemsFromAPI() {
+    initalizeAllOfTheSourceStrings() {
+      let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/items";
+      let xhr = new XMLHttpRequest();
+      // let responceData = "";
+      xhr.open("GET", APITestURL, true);
+      let tempArray = [];
+      console.log(typeof this.responceData);
+      xhr.onreadystatechange = function(){
+        if(this.status === 200){
+          
+          let response = JSON.parse(xhr.responseText);
+          response.forEach(function(item) {
 
+            // console.log(tempArray.includes(item.SourceString));
+            if (!tempArray.includes(item.SourceString)) {
+              tempArray.push(item.SourceString);
+            }
+          }.bind(this)); // binding 'this' to the current context
+          
+        }
+        else{
+          console.log("failed??")
+        }
+      }
+
+      xhr.send(); 
+      this.AllSourceStrings = tempArray
+      console.log(this.AllSourceStrings)
 
     },
     GetItemsFromDatabase() {
@@ -288,54 +299,6 @@
           console.log("failed??")
         }
       }
-
-      xhr.send(itemJSON); 
-    },
-    putMultiupleItemsInDatabase() {
-      let APITestURL = "https://con9zmebbb.execute-api.us-east-1.amazonaws.com/manyitems";
-
-      // Define the JSON object you want to send to the API
-      name_data = {
-        name: "test_name"
-      }
-      const item3 = {
-          itemHash: 'test_item_from_website3',
-          displayProperties: name_data,
-          sourceString: 'source_string_from_website3',
-          itemTypeDisplayName: 'itemTypeDisplayName3',
-          itemTypeAndTierDisplayName: 'itemTypeAndTierDisplayName3',
-      }
-      const item2 = {
-          itemHash: 'test_item_from_website2',
-          displayProperties: name_data,
-          sourceString: 'source_string_from_website2',
-          itemTypeDisplayName: 'itemTypeDisplayName2',
-          itemTypeAndTierDisplayName: 'itemTypeAndTierDisplayName2',
-      }
-      const items = [item2, item3]
-      // Now create the request object including the items array
-      const requestObject = {
-          items: items
-      }
-      // Convert the JSON object to a string
-      const itemJSON = JSON.stringify(requestObject);
-      console.log("stringified json object: " + itemJSON)
-      let xhr = new XMLHttpRequest();
-      
-      xhr.open("PUT", APITestURL, true);
-      // Set the Content-Type header to application/json
-      xhr.setRequestHeader("Content-Type", "application/json");
-      // xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
-     
-      xhr.onreadystatechange = function(){
-        if(this.status === 200){
-          console.log("this.responseText: "+this.responseText);
-        }
-        else{
-          console.log("failed??")
-        }
-      }
-
       xhr.send(itemJSON); 
     },
     ParseItemsToPush() { 
@@ -563,9 +526,9 @@
     padding-left: 55px;
   }
   .unfavored {
-    color: rgba(116, 38, 51, 0.438)
+    color: rgb(65, 35, 40) !important
   }
   .favored {
-    color: pink
+    color: crimson !important
   }
 </style>
